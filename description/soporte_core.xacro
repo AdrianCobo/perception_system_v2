@@ -1,0 +1,83 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" >
+
+    <xacro:include filename="inertial_macros.xacro"/>
+
+    <material name="white">
+        <color rgba="1.0 1.0 1.0 1.0"/>
+    </material>
+
+    <!-- BASE LINK-->
+    <link name="base_link"></link>
+
+    <!-- BASE_FOOTPRINT LINK necessary for slam_toolbox-->
+
+    <joint name="base_footprint_joint" type="fixed">
+        <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+        <parent link="base_link"/>
+        <child link="base_footprint"/>
+    </joint>
+
+    <link name="base_footprint"></link>
+
+    <joint name="base_chassis_joint" type="fixed">
+        <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+        <parent link="base_footprint"/>
+        <child link="base_chassis"/>
+    </joint>
+
+    <link name="base_chassis">
+        <visual name="">
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <box size="0.105 0.105 0.073"/>
+            </geometry>
+            <material name="white"/>
+        </visual>
+        <collision>
+            <origin xyz="0 0.0 -0.005" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <box size="0.105 0.105 0.073"/>
+            </geometry>
+        </collision>
+        <!-- Todo -->
+        <xacro:inertial_box mass="0.5" x="0.01" y="0.01" z="0.01">
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+        </xacro:inertial_box>
+    </link>
+
+    <joint name="c1_joint" type="fixed">
+        <origin xyz="1.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+        <parent link="base_chassis"/>
+        <child link="base_c1"/>
+    </joint>
+
+    <link name="base_c1"></link>
+
+    <joint name="c2_joint" type="fixed">
+        <origin xyz="0.0 1.0 0.0" rpy="0.0 0.0 ${pi/2}"/>
+        <parent link="base_chassis"/>
+        <child link="base_c2"/>
+    </joint>
+
+    <link name="base_c2"></link>
+
+    <joint name="c3_joint" type="fixed">
+        <origin xyz="-1.0 0.0 0.0" rpy="0.0 0.0 ${pi}"/>
+        <parent link="base_chassis"/>
+        <child link="base_c3"/>
+    </joint>
+
+    <link name="base_c3"></link>
+
+    <joint name="c4_joint" type="fixed">
+        <origin xyz="0.0 -1.0 0.0" rpy="0.0 0.0 ${3*pi/2}"/>
+        <parent link="base_chassis"/>
+        <child link="base_c4"/>
+    </joint>
+
+    <link name="base_c4"></link>
+
+
+
+</robot>
