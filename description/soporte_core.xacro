@@ -49,34 +49,34 @@
     <joint name="c1_joint" type="fixed">
         <origin xyz="1.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
         <parent link="base_chassis"/>
-        <child link="base_c1"/>
+        <child link="oak1_rgb_camera_optical_frame"/>
     </joint>
 
-    <link name="base_c1"></link>
+    <link name="oak1_rgb_camera_optical_frame"></link>
 
     <joint name="c2_joint" type="fixed">
         <origin xyz="0.0 1.0 0.0" rpy="0.0 0.0 ${pi/2}"/>
         <parent link="base_chassis"/>
-        <child link="base_c2"/>
+        <child link="oak2_rgb_camera_optical_frame"/>
     </joint>
 
-    <link name="base_c2"></link>
+    <link name="oak2_rgb_camera_optical_frame"></link>
 
     <joint name="c3_joint" type="fixed">
         <origin xyz="-1.0 0.0 0.0" rpy="0.0 0.0 ${pi}"/>
         <parent link="base_chassis"/>
-        <child link="base_c3"/>
+        <child link="oak3_rgb_camera_optical_frame"/>
     </joint>
 
-    <link name="base_c3"></link>
+    <link name="oak3_rgb_camera_optical_frame"></link>
 
     <joint name="c4_joint" type="fixed">
         <origin xyz="0.0 -1.0 0.0" rpy="0.0 0.0 ${3*pi/2}"/>
         <parent link="base_chassis"/>
-        <child link="base_c4"/>
+        <child link="oak4_rgb_camera_optical_frame"/>
     </joint>
 
-    <link name="base_c4"></link>
+    <link name="oak4_rgb_camera_optical_frame"></link>
 
 
 
