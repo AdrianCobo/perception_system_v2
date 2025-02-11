@@ -28,14 +28,14 @@
 
     <link name="base_chassis">
         <visual name="">
-            <origin xyz="0.0 0.0 0.0" rpy="0.0 ${pi/2} 0.0"/>
+            <origin xyz="0.0 0.0 0.0" rpy="${pi/2} 0.0 ${pi/2}"/>
             <geometry>
                 <mesh filename="package://perception_system_v2/meshes/soporte_160grad.dae" scale="0.001 0.001 0.001"/>
             </geometry>
             <material name="white"/>
         </visual>
         <collision>
-            <origin xyz="0 0.0 0.0" rpy="0.0 ${pi/2} 0.0"/>
+            <origin xyz="0.0 0.0 0.0" rpy="${pi/2} ${pi/2} 0.0"/>
             <geometry>
                 <mesh filename="package://perception_system_v2/meshes/soporte_160grad.dae" scale="0.001 0.001 0.001"/>
             </geometry>
@@ -47,7 +47,7 @@
     </link>
 
     <joint name="c1_joint" type="fixed">
-        <origin xyz="0.10 0.0 0.0" rpy="0.0 0.0 0.0"/>
+        <origin xyz="0.03420 0.0 0.0" rpy="0.0 0.0 0.0"/>
         <parent link="base_chassis"/>
         <child link="oak1-d-base-frame"/>
     </joint>
@@ -55,7 +55,7 @@
     <link name="oak1-d-base-frame"></link>
 
     <joint name="c2_joint" type="fixed">
-        <origin xyz="0.05 0.05 0.0" rpy="0.0 0.0 ${30*pi/180}"/>
+        <origin xyz="0.01710 0.09698 0.0" rpy="0.0 0.0 ${30*pi/180}"/>
         <parent link="base_chassis"/>
         <child link="oak2-d-base-frame"/>
     </joint>
@@ -63,7 +63,7 @@
     <link name="oak2-d-base-frame"></link>
 
     <joint name="c3_joint" type="fixed">
-        <origin xyz="0.05 -0.05 0.0" rpy="0.0 0.0 ${330*pi/180}"/>
+        <origin xyz="0.01710 -0.09698 0.0" rpy="0.0 0.0 ${330*pi/180}"/>
         <parent link="base_chassis"/>
         <child link="oak3-d-base-frame"/>
     </joint>
