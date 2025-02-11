@@ -30,14 +30,14 @@
         <visual name="">
             <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
             <geometry>
-                <box size="0.105 0.105 0.073"/>
+                <mesh filename="package://perception_system_v2/meshes/box.dae"/>
             </geometry>
             <material name="white"/>
         </visual>
         <collision>
             <origin xyz="0 0.0 -0.005" rpy="0.0 0.0 0.0"/>
             <geometry>
-                <box size="0.105 0.105 0.073"/>
+                <mesh filename="package://perception_system_v2/meshes/box.dae"/>
             </geometry>
         </collision>
         <!-- Todo -->
@@ -47,7 +47,7 @@
     </link>
 
     <joint name="c1_joint" type="fixed">
-        <origin xyz="1.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+        <origin xyz="0.10 0.0 0.0" rpy="0.0 0.0 0.0"/>
         <parent link="base_chassis"/>
         <child link="oak1-d-base-frame"/>
     </joint>
@@ -55,7 +55,7 @@
     <link name="oak1-d-base-frame"></link>
 
     <joint name="c2_joint" type="fixed">
-        <origin xyz="0.0 1.0 0.0" rpy="0.0 0.0 ${pi/2}"/>
+        <origin xyz="0.05 0.05 0.0" rpy="0.0 0.0 ${30*pi/180}"/>
         <parent link="base_chassis"/>
         <child link="oak2-d-base-frame"/>
     </joint>
@@ -63,7 +63,7 @@
     <link name="oak2-d-base-frame"></link>
 
     <joint name="c3_joint" type="fixed">
-        <origin xyz="-1.0 0.0 0.0" rpy="0.0 0.0 ${pi}"/>
+        <origin xyz="0.05 -0.05 0.0" rpy="0.0 0.0 ${330*pi/180}"/>
         <parent link="base_chassis"/>
         <child link="oak3-d-base-frame"/>
     </joint>
@@ -71,7 +71,7 @@
     <link name="oak3-d-base-frame"></link>
 
     <joint name="c4_joint" type="fixed">
-        <origin xyz="0.0 -1.0 0.0" rpy="0.0 0.0 ${3*pi/2}"/>
+        <origin xyz="-1.0 0.0 0.0" rpy="0.0 0.0 ${pi}"/>
         <parent link="base_chassis"/>
         <child link="oak4-d-base-frame"/>
     </joint>
