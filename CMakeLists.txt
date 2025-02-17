@@ -17,6 +17,7 @@ install(DIRECTORY rviz DESTINATION share/${PROJECT_NAME})
 install(DIRECTORY launch DESTINATION share/${PROJECT_NAME})
 install(DIRECTORY description DESTINATION share/${PROJECT_NAME})
 install(DIRECTORY meshes DESTINATION share/${PROJECT_NAME})
+install(DIRECTORY config share/${PROJECT_NAME})
 
 ament_package()
 
