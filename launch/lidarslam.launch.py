@@ -10,7 +10,7 @@ def generate_launch_description():
     main_param_dir = launch.substitutions.LaunchConfiguration(
         'main_param_dir',
         default=os.path.join(
-            get_package_share_directory('perception_system'),
+            get_package_share_directory('perception_system_v2'),
             'config',
             'lidarslam.yaml'))
 
@@ -18,7 +18,7 @@ def generate_launch_description():
         package='scanmatcher',
         executable='scanmatcher_node',
         parameters=[main_param_dir],
-        remappings=[('/input_cloud','/rslidar_points'), ('/imu', '/imu/data')],
+        remappings=[('/input_cloud', '/computer_vision/pcl_sync')],
         output='screen'
         )
 
