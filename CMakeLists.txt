@@ -1,23 +1,25 @@
 cmake_minimum_required(VERSION 3.10.2) 
 project(perception_system_v2 VERSION 0.0.1 LANGUAGES CXX C)
 
-set(CMAKE_CXX_STANDARD 14)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
-set(CMAKE_INSTALL_RPATH_USE_LINK_PATH TRUE)
-add_compile_options(-g)
-
-## is used, also find other catkin packages
-if(POLICY CMP0057)
-    cmake_policy(SET CMP0057 NEW)
+if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
+    add_compile_options(-Wall -Wextra -Wpedantic)
 endif()
 
 find_package(ament_cmake REQUIRED)
 
-install(DIRECTORY rviz DESTINATION share/${PROJECT_NAME})
-install(DIRECTORY launch DESTINATION share/${PROJECT_NAME})
-install(DIRECTORY description DESTINATION share/${PROJECT_NAME})
-install(DIRECTORY meshes DESTINATION share/${PROJECT_NAME})
-install(DIRECTORY config share/${PROJECT_NAME})
+install(DIRECTORY rviz launch description meshes config DESTINATION share/${PROJECT_NAME})
+
+if(BUILD_TESTING)
+    find_package(ament_lint_auto REQUIRED)
+    # the following line skips the linter which checks for copyrights
+    # comment the line when a copyright and license is added to all source files
+    set(ament_cmake_copyright_FOUND TRUE)
+    # the following line skips cpplint (only works in a git repo)
+    # comment the line when this package is in a git repo and when
+    # a copyright and license is added to all source files
+    set(ament_cmake_cpplint_FOUND TRUE)
+    ament_lint_auto_find_test_dependencies()
+  endif()
 
 ament_package()
 

@@ -1,10 +1,18 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro"  name="robot">    
     <xacro:include filename="inertial_macros.xacro"/>
-    <xacro:include filename="soporte_core_hexag.xacro" />
-    <!-- <xacro:include filename="$(find realsense2_description)/urdf/_d435.urdf.xacro" /> -->
+    <xacro:include filename="soporte_core.xacro" />
+    <xacro:include filename="soporte_camera.xacro" />
+    <xacro:include filename="lidar.xacro" />
+    <xacro:include filename="box.xacro" />
     
-    <!-- <xacro:sensor_d435 parent="camera_attachment_link" use_nominal_extrinsics="$(arg use_nominal_extrinsics)" add_plug="$(arg add_plug)" use_mesh="$(arg use_mesh)">
-        <origin xyz="0.075 0 -0.01" rpy="0 0 0"/>
-    </xacro:sensor_d435> -->
+    <xacro:box parent="base_footprint">
+        <origin xyz="0.0 0 0.0" rpy="0 0 0"/>
+    </xacro:box>
+    <xacro:camera_base parent="base_footprint">
+        <origin xyz="0.0 0.0 0.06" rpy="0.0 0.0 0.0"/>
+    </xacro:camera_base>
+    <xacro:lidar parent="base_footprint">
+        <origin xyz="0.0 0.0 0.11" rpy="0.0 0.0 0.0"/>
+    </xacro:lidar>
 </robot>

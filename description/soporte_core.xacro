@@ -30,14 +30,14 @@
         <visual name="">
             <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
             <geometry>
-                <mesh filename="package://perception_system_v2/meshes/soporte_hexag.dae"/>
+                <mesh filename="package://perception_system_v2/meshes/base.dae"/>
             </geometry>
             <material name="white"/>
         </visual>
         <collision>
-            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <origin xyz="0 0.0 0.0" rpy="0.0 0.0 0.0"/>
             <geometry>
-                <mesh filename="package://perception_system_v2/meshes/soporte_hexag.dae"/>
+                <mesh filename="package://perception_system_v2/meshes/base.dae"/>
             </geometry>
         </collision>
         <!-- Todo -->
@@ -45,39 +45,5 @@
             <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
         </xacro:inertial_box>
     </link>
-
-    <joint name="c1_joint" type="fixed">
-        <origin xyz="0.08660 0.0 0.0" rpy="0.0 0.0 0.0"/>
-        <parent link="base_chassis"/>
-        <child link="oak1-d-base-frame"/>
-    </joint>
-
-    <link name="oak1-d-base-frame"></link>
-
-    <joint name="c2_joint" type="fixed">
-        <origin xyz="0.04330 0.075 0.0" rpy="0.0 0.0 ${60*pi/180}"/>
-        <parent link="base_chassis"/>
-        <child link="oak2-d-base-frame"/>
-    </joint>
-
-    <link name="oak2-d-base-frame"></link>
-
-    <joint name="c3_joint" type="fixed">
-        <origin xyz="0.04330 -0.075 0.0" rpy="0.0 0.0 ${300*pi/180}"/>
-        <parent link="base_chassis"/>
-        <child link="oak3-d-base-frame"/>
-    </joint>
-
-    <link name="oak3-d-base-frame"></link>
-
-    <joint name="c4_joint" type="fixed">
-        <origin xyz="-1.0 0.0 0.0" rpy="0.0 0.0 ${pi}"/>
-        <parent link="base_chassis"/>
-        <child link="oak4-d-base-frame"/>
-    </joint>
-
-    <link name="oak4-d-base-frame"></link>
-
-
-
+    
 </robot>
