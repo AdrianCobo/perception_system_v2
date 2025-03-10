@@ -12,13 +12,20 @@ def generate_launch_description():
         default=os.path.join(
             get_package_share_directory('perception_system_v2'),
             'config',
-            'lidarslam.yaml'))
+            'lidarslam_lid.yaml'))
+
+    rviz_param_dir = launch.substitutions.LaunchConfiguration(
+        'rviz_param_dir',
+        default=os.path.join(
+            get_package_share_directory('perception_system_v2'),
+            'rviz',
+            'mapping.rviz'))
 
     mapping = launch_ros.actions.Node(
         package='scanmatcher',
         executable='scanmatcher_node',
         parameters=[main_param_dir],
-        remappings=[('/input_cloud', '/computer_vision/pcl_sync')],
+        remappings=[('/input_cloud', '/rslidar_points')],
         output='screen'
         )
 
@@ -29,6 +36,11 @@ def generate_launch_description():
         output='screen'
         )
 
+    rviz = launch_ros.actions.Node(
+        package='rviz2',
+        executable='rviz2',
+        arguments=['-d', rviz_param_dir]
+        )
 
     return launch.LaunchDescription([
         launch.actions.DeclareLaunchArgument(
@@ -37,4 +49,5 @@ def generate_launch_description():
             description='Full path to main parameter file to load'),
         mapping,
         graphbasedslam,
+        rviz
             ])
