@@ -25,7 +25,11 @@ def generate_launch_description():
         package='scanmatcher',
         executable='scanmatcher_node',
         parameters=[main_param_dir],
-        remappings=[('/input_cloud', '/computer_vision/pcl_sync')],
+        remappings=[('/input_cloud', '/computer_vision/pcl_sync'),
+                    ('/current_pose', '/current_pose_cam'),
+                    ('/map', '/map_cam'),
+                    ('/path', '/path_cam'),
+                    ('/map_array', '/map_array_cam')],
         output='screen'
         )
 
@@ -33,6 +37,9 @@ def generate_launch_description():
         package='graph_based_slam',
         executable='graph_based_slam_node',
         parameters=[main_param_dir],
+        remappings=[('/map_array', '/map_array_cam'),
+                    ('/modified_path', '/modified_path_cam'),
+                    ('/modified_map', '/modified_map_cam')],
         output='screen'
         )
 
