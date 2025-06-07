@@ -66,9 +66,6 @@ ros2 launch perception_system_v2 lidarslam.launch.py
 rviz2
 ros2 bag play rosbag2_2025_03_07-12_01_20/
 ```
-
-## Cambiar luego:
-
 ## Resultado de usar el sistema de percepción con lidarslam_ros2 (en rojo nuestro sistema y en escala de colores el del LiDAR)
 [![Resultado del Experimento](https://moresales.ca/wp-content/uploads/2022/06/Click-Me-2.png)](https://urjc-my.sharepoint.com/:v:/r/personal/josemiguel_guerrero_urjc_es/Documents/Rosbags_Adrian/tfm_data/lidar_vs_camara_lab.mp4?csf=1&web=1&e=CH88Wh&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D)
 
@@ -76,25 +73,26 @@ ros2 bag play rosbag2_2025_03_07-12_01_20/
 ## Componentes empleados:
 Procesador:
 - [Jetson AGX Xavier](https://www.nvidia.com/es-la/autonomous-machines/embedded-systems/jetson-agx-xavier/)
-- [Intel® NUC NUC5i5RYK](https://www.intel.la/content/www/xl/es/products/sku/83254/intel-nuc-kit-nuc5i5ryk/specifications.html) (Recomendado)  
+- [Intel® NUC](https://www.pccomponentes.com/msi-cubi-5-12m-210bes-intel-core-i7-1255u?utm_campaign=pedido-confirmado&utm_source=connectif&utm_medium=email&utm_content=MSI+Cubi+5+12M-210BES+Intel+Core+i7-1255U) (Recomendado)  
 
 Sensores:
-- [Intel realsense d435I](https://www.intelrealsense.com/depth-camera-d435i/)
+- [OAK-D-Lite](https://shop.luxonis.com/products/oak-d-lite-1?variant=42583102456031)
 - [Robosense Helios 32-beam](https://www.robosense.ai/en/rslidar/RS-Helios)
 
 Batería portatil:
 - [Krisdonia 50000mah Power Pack](https://www.amazon.es/Krisdonia-50000mah-Bater%C3%ADa-Cargador-Port%C3%A1til/dp/B077TR3H2R)
 
 Chassis:
-- [Modelo 3D](https://github.com/AdrianCobo/perception_system/tree/main/meshes)
+- [Modelo 3D](https://github.com/AdrianCobo/perception_system_v2)
   <div align="center">
-  <img width=500px src="https://github.com/user-attachments/assets/6268514e-7398-4a32-aca1-fb947f5899ed" alt="explode"></a>
+  <img width=500px src="https://github.com/user-attachments/assets/0f978722-dc84-49ed-8cf5-4613f4afd448" alt="explode"></a>
   </div>
 
 Diagrama de conexiones:
   <div align="center">
-  <img width=500px src="https://github.com/user-attachments/assets/81e16504-ab6a-4319-b346-66d632af213c" alt="explode"></a>
+  <img width=500px src="https://github.com/user-attachments/assets/3889d39c-d107-4275-be20-a40275c22097" alt="explode"></a>
   </div>
+
   
 ## Rosbags y memoria del TFM
 Puedes encontrar la memoria del TFM de este proyecto y los rosbags grabados durante los experimentos [aquí](https://urjc-my.sharepoint.com/personal/josemiguel_guerrero_urjc_es/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fjosemiguel%5Fguerrero%5Furjc%5Fes%2FDocuments%2FRosbags%5FAdrian&ga=1)
