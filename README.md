@@ -14,8 +14,10 @@ Asegúrate de estar trabajando dentro de un workspace de ROS 2 (por ejemplo, `~/
 ```bash
 cd ~/ros2_ws/src
 git clone https://github.com/AdrianCobo/perception_system_v2.git
+git clone -b calib https://github.com/AdrianCobo/computer_vision.git
+git clone -b multicam https://github.com/AdrianCobo/oak_d_camera.git
 cd ..
-colcon build --packages-select perception_system_v2
+colcon build
 ```
 Instalar lidarslam_ros2:
 Si estás en Ubuntu 24
