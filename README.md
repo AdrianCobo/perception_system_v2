@@ -69,7 +69,7 @@ ros2 bag play rosbag2_2025_03_07-12_01_20/
 
 ## Cambiar luego:
 
-## Resultado de usar el sistema de percepción con lidar_slam
+## Resultado de usar el sistema de percepción con lidarslam_ros2 (en rojo nuestro sistema y en escala de colores el del LiDAR)
 [![Resultado del Experimento](https://moresales.ca/wp-content/uploads/2022/06/Click-Me-2.png)](https://urjc-my.sharepoint.com/:v:/r/personal/josemiguel_guerrero_urjc_es/Documents/Rosbags_Adrian/tfm_data/lidar_vs_camara_lab.mp4?csf=1&web=1&e=CH88Wh&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D)
 
 
